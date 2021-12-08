@@ -26,14 +26,6 @@ public class CRMProject {
 	WebDriverWait wait;
 	Actions builder;
 
-//	@BeforeSuite
-//	public void beforeTest() {
-//		driver = new ChromeDriver();
-//		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-//		builder = new Actions(driver);
-//	}
-
 	@BeforeMethod
 	public void beforeMethod() {
 		driver = new ChromeDriver();
@@ -50,6 +42,7 @@ public class CRMProject {
 	}
 
 	@Test
+	//Verify the website title
 	public void TC1() {
 		String title = driver.getTitle();
 		Assert.assertEquals(title, "SuiteCRM", "Title doesn't match");
@@ -58,6 +51,7 @@ public class CRMProject {
 	}
 
 	@Test
+	//Get the url of the header image
 	public void TC2() {
 		WebElement imgSrc = driver.findElement(By.xpath("//img[@alt='SuiteCRM']"));
 		System.out.println("URL of the header image is " + imgSrc.getAttribute("src"));
@@ -94,7 +88,7 @@ public class CRMProject {
 //		String bkgcolor = navigation.getCssValue("background-color");
 	}
 
-	@Ignore
+	@Test
 	// Menu checking
 	public void TC6() {
 		driver.findElement(By.id("user_name")).sendKeys("admin");
