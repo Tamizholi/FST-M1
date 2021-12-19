@@ -20,10 +20,10 @@ public class Activity12_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		WebDriver driver = new FirefoxDriver();
+		WebDriver driver = new FirefoxDriver();
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 //		capabilities.setAcceptInsecureCerts(true);
-		WebDriver driver = new ChromeDriver(capabilities);
+//		WebDriver driver = new ChromeDriver(capabilities);
 		driver.manage().window().maximize();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		driver.get("https://www.training-support.net/selenium/popups");
